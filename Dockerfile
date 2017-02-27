@@ -1,21 +1,18 @@
-FROM hyper/dehydrated:latest
+FROM python:alpine
 LABEL maintainer Marshall Lai <lai.marshall@gmail.com> 
 
-RUN apt-get update \
- && apt-get install -y \
-      curl \
+RUN apk --update add\
       inotify-tools \
-      python2.7 \
-      python-pip
-
+      curl
+      
 RUN pip install \
       dns-lexicon
 
 VOLUME ["/letsencrypt"]
 ADD https://raw.githubusercontent.com/AnalogJ/lexicon/master/examples/dehydrated.default.sh /dns/hook
-
+ADD https://raw.githubusercontent.com/lukas2511/dehydrated/master/dehydrated  ./dehydrated
 COPY run.sh config ./
-RUN chmod +x /dns/hook ./run.sh
+RUN chmod +x ./dehydrated /dns/hook ./run.sh
 
 ENTRYPOINT ["/bin/bash"]
 CMD ["./run.sh"]
