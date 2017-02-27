@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 
 interrupt() {
@@ -8,9 +9,8 @@ interrupt() {
 
 trap interrupt SIGINT
 
-while true; do
-  ./dehydrated --cron --hook /dns/hook --challenge dns-01
+while true; do 
+  ./dehydrated --cron --hook /dbs/hook --challenge dns-01
   ./dehydrated --cleanup
   inotifywait --timeout 86400 /letsencrypt/domains.txt
-  sleep 60
-done
+don
