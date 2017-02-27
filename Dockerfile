@@ -15,4 +15,4 @@ COPY run.sh config ./
 RUN chmod +x ./dehydrated /dns/hook ./run.sh
 
 ENTRYPOINT ["/bin/bash"]
-CMD ["./run.sh"]
+#CMD ["./run.sh"]
