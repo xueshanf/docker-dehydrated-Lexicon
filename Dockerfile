@@ -1,10 +1,8 @@
 FROM python:latest
 LABEL maintainer Marshall Lai <lai.marshall@gmail.com> 
 
-RUN apt-get update \
- && apt-get install -y\
-      inotify-tools \
-      curl
+RUN apk add --update openssl curl bash inotify-tools \
+ && rm -rf /var/cache/apk/*
       
 RUN pip install \
       dns-lexicon
