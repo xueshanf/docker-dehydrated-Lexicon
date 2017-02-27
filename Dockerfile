@@ -14,8 +14,8 @@ RUN pip install \
 VOLUME ["/letsencrypt"]
 ADD https://raw.githubusercontent.com/AnalogJ/lexicon/master/examples/dehydrated.default.sh /dns/hook
 
-COPY run.sh config /
-RUN chmod +x /dns/hook /run.sh /letsencrypt.sh
+COPY run.sh config ./
+RUN chmod +x /dns/hook ./run.sh
 
 ENTRYPOINT ["/bin/bash"]
-CMD ["/run.sh"]
+CMD ["./run.sh"]
