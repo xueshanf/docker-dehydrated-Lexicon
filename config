@@ -8,5 +8,5 @@ KEY_ALGO=${ALGO:-rsa}
 if [ -z ${STAGING+-} ]; then
   CA="https://acme-v02.api.letsencrypt.org/directory"
 else
-  CA="https://acme-staging.api.letsencrypt.org/directory"
+  CA="https://acme-staging-v02.api.letsencrypt.org/directory"
 fi
