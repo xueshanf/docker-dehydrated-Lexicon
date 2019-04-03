@@ -5,7 +5,8 @@ RUN apk add --update openssl curl bash inotify-tools \
  && rm -rf /var/cache/apk/*
 
 RUN pip install \
-      dns-lexicon==2.4.7
+      dns-lexicon==2.4.7 \
+      boto3 
 
 VOLUME ["/letsencrypt"]
 RUN mkdir /dns
