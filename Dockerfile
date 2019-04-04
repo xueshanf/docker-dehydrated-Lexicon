@@ -1,5 +1,5 @@
 FROM python:alpine
-LABEL maintainer Marshall Lai <lai.marshall@gmail.com> 
+LABEL maintainer Xueshan Feng <xueshan.feng@gmail.com>
 
 RUN apk --no-cache --update add \
 	curl \
@@ -7,8 +7,6 @@ RUN apk --no-cache --update add \
 	bash \
         inotify-tools \
 	openssl
-
-RUN pip install boto3
 
 RUN apk --update add --virtual build-dependencies \
   python-dev \
