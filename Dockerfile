@@ -13,7 +13,7 @@ RUN apk --update add --virtual build-dependencies \
   build-base \
   openssl-dev \
   libffi-dev \
-  && pip install dns-lexicon[route53] boto3 \
+  && pip install dns-lexicon==3.1.7 dns-lexicon[route53]==3.1.7 boto3 \
   && apk del build-dependencies \
   && rm -rf /var/cache/apk/*
 

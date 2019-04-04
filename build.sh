@@ -1,2 +1,2 @@
 IMAGE=xueshanf/docker-dehydrated-lexicon
-docker build -t $IMAGE .
+docker build --no-cache -t $IMAGE .
